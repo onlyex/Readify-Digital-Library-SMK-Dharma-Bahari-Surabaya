@@ -1,0 +1,181 @@
+/* Slider Modern styles extracted from index.php */
+.smart-slider-modern { position: relative; box-sizing: border-box; overflow: hidden; background: transparent; /* full-bleed below */
+    width: 100vw; margin-left: calc(50% - 50vw); padding: 28px 0; }
+.smart-slider-modern .ss-bg { position: absolute; left:0; right:0; top:0; bottom:0; z-index: 0; background-size: cover; background-position: center center; background-repeat: no-repeat; border-radius: 0; transform: none; opacity: 1; transition: background-image .6s ease, opacity .45s ease, background-color .6s ease; pointer-events: none; filter: none; min-height: var(--hero-height,520px); }
+.smart-slider-modern .ss-bg.ss-bg-alt { position: absolute; inset: 0; z-index: 1; background-size: cover; background-position: center center; background-repeat: no-repeat; pointer-events: none; opacity: 0; transition: opacity .85s ease; min-height: var(--hero-height,520px); }
+/* Remove heavy overlay so background image shows immediately */
+.smart-slider-modern .ss-bg::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: rgba(0,0,0,0.02); border-radius: 0; transition: background .25s ease, opacity .25s ease; }
+.smart-slider-modern .ss-inner { position: relative; z-index: 5; display:flex; align-items:stretch; gap:18px; max-width:1400px; width:100%; margin:0 auto; padding:20px 16px; background: transparent; }
+
+/* Slider height control: change `--hero-height` to adjust easily. Value is in pixels. */
+:root { --hero-height: 320px; }
+.smart-slider-modern { padding: 0 !important; min-height: var(--hero-height) !important; }
+.mart-slider-modern .ss-inner { padding: 8px 12px !important; align-items: center; max-width:1300px; }
+
+/* Make welcome heading smaller to fit the reduced height */
+.ss-welcome { text-align: left; }
+.ss-welcome h1 { font-size: 40px; line-height: 1.06; margin:0 0 6px; color: #0b1220; font-weight:800; }
+.ss-welcome p { display:block; color: rgba(11,17,32,0.9); font-size:15px; line-height:1.45; margin:0; }
+.ss-viewport { overflow: visible; width: 100%; padding-left: 8px; }
+.ss-track { display:flex; gap:16px; transition: transform 1.2s cubic-bezier(.2,.9,.3,1); will-change: transform; align-items: stretch; padding: 18px 0; align-items:center; }
+.ss-slide { flex: 0 0 auto; width: 260px; display:flex; align-items:stretch; justify-content:center; }
+
+.smart-slider-modern { border-radius: 0 !important; }
+.smart-slider-modern .ss-bg { position: absolute !important; inset: 0 !important; z-index: 0 !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; opacity: 1 !important; min-height: var(--hero-height,520px); pointer-events: none !important; display: none !important; }
+.smart-slider-modern .ss-bg.ss-bg-alt { display: none !important; }
+.smart-slider-modern .ss-bg::after { background: transparent !important; opacity: 1 !important; }
+.smart-slider-modern .ss-inner { background: transparent !important; z-index: 5 !important; }
+.smart-slider-modern .ss-inner * { background-color: transparent !important; }
+
+/* Ensure content sits above the background */
+.smart-slider-modern .ss-inner, .smart-slider-modern .ss-right-col, .smart-slider-modern .ss-left-col { position: relative; }
+
+/* If any global rules are forcing a white panel, override panel only (keep cards visible) */
+.smart-slider-modern .panel { background: transparent !important; box-shadow: none !important; }
+
+
+/* Coverflow look: center card large and elevated, side cards smaller and slightly rotated */
+.ss-slide { transition: transform 1.6s cubic-bezier(.2,.9,.3,1), opacity 1.2s ease, filter 1.2s ease; transform-origin: center center; }
+.ss-slide.inactive { opacity: 0.6; filter: blur(0px) saturate(.96); transform: scale(.92) translateY(4px); }
+.ss-slide.active { opacity: 1; transform: scale(1.04) translateY(-6px); box-shadow: 0 18px 48px rgba(6,10,24,0.28); z-index: 60; }
+.ss-slide.prev, .ss-slide.next { opacity: 0.92; transform: scale(.95) translateY(0px); box-shadow: 0 18px 40px rgba(8,12,28,0.14); z-index: 50; }
+.ss-slide.near-prev { transform: translateX(-6px) rotateY(6deg) scale(.94); }
+.ss-slide.near-next { transform: translateX(6px) rotateY(-6deg) scale(.94); }
+
+/* small adjustments for slide content */
+.ss-card { width:100%; max-width:260px; }
+.ss-cover-wrap { padding-top: 135%; }
+
+/* center the dots and controls under the right column */
+.ss-controls { display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+.ss-btns { display:flex; gap:8px; }
+
+.ss-card { background: linear-gradient(180deg, #ffffff, #fbfdff); border-radius:12px; box-shadow: 0 12px 30px rgba(3,24,40,0.06); padding:12px; display:flex; flex-direction:column; gap:8px; transform-origin: center bottom; transition: transform .6s ease, box-shadow .6s ease; cursor: grab; }
+.ss-card:active { cursor: grabbing; }
+.ss-card:hover { transform: translateY(-8px) rotate(-0.4deg); box-shadow: 0 20px 44px rgba(2,6,23,0.16); }
+.ss-cover-wrap { width:100%; padding-top: 140%; position: relative; overflow:hidden; border-radius:10px; }
+.ss-cover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+.ss-title { font-size:16px; margin:0; color:#0b1220; font-weight:700; line-height:1.2; }
+.ss-author { font-size:13px; margin:0; color: #596270; }
+.ss-card.empty { display:flex; align-items:center; justify-content:center; padding:36px; min-height:200px; }
+.ss-cover-placeholder { width:100%; height:160px; background:linear-gradient(90deg,#efe6ff,#f7f2ff); border-radius:10px; }
+.ss-btn { z-index: 10; border: none; background: rgba(255,255,255,0.98); color:#2b1b50; width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(6,10,28,0.12); cursor:pointer; font-size:18px; display:inline-flex; align-items:center; justify-content:center; transition: transform .18s ease; }
+.ss-btn:hover { transform: scale(1.04); }
+.ss-prev { margin-right:8px; }
+.ss-next { margin-left:8px; }
+.ss-dots { margin-top: 10px; display:none !important; gap:8px; justify-content:flex-end; align-items:center; }
+
+/* Position prev/next on the left/right sides of the viewport */
+.smart-slider-modern .ss-viewport { position: relative; }
+.smart-slider-modern .ss-prev,
+.smart-slider-modern .ss-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 9999 !important;
+	width:48px;
+	height:48px;
+	display:inline-flex !important;
+	align-items:center;
+	justify-content:center;
+	border-radius:12px;
+	background: linear-gradient(180deg,#1678b8,#0f5f92) !important;
+	color: #ffffff !important;
+	font-weight:700;
+	box-shadow: 0 10px 30px rgba(2,6,23,0.35) !important;
+	border: 0;
+}
+.smart-slider-modern .ss-prev { left: -8px; }
+.smart-slider-modern .ss-next { right: -8px; }
+
+/* On small screens, revert buttons to below the slider for easier reach */
+@media (max-width: 900px) {
+	.smart-slider-modern .ss-prev,
+	.smart-slider-modern .ss-next {
+		position: static;
+		transform: none;
+		width:40px; height:40px; margin:0 6px;
+	}
+	.ss-controls { justify-content:center; }
+	.ss-dots { display:none; }
+}
+.ss-dot { width:10px; height:10px; background: rgba(255,255,255,0.7); border-radius:50%; cursor:pointer; transition: transform .18s ease, opacity .18s ease; opacity:.6; }
+.ss-dot.active { background: #fff; transform: scale(1.18); opacity:1; }
+@media (max-width: 1100px) { .ss-slide { width: calc((100% - 16px) / 3); } }
+@media (max-width: 800px) { .ss-slide { width: calc((100% - 8px) / 2); } }
+
+/* left / right columns */
+.ss-left-col { width:28%; min-width:200px; display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center; padding-left:20px; text-align:center; }
+.ss-left-actions { display:flex; flex-direction:column; gap:10px; padding:12px 6px; width:100%; }
+.ss-left-actions .btn { width:100%; box-sizing:border-box; }
+
+/* Hero-style buttons on wide screens */
+@media (min-width: 1000px) {
+    .ss-welcome { text-align: left; padding:18px 18px; }
+    .ss-left-actions { flex-direction:row; justify-content:flex-start; gap:12px; padding-top:12px; }
+    .ss-left-actions .btn { width: auto; padding:10px 16px; border-radius:10px; font-weight:700; }
+    .ss-left-actions .btn-primary { background: linear-gradient(90deg,#4aa0ff,#6fb2ff); color:#fff; box-shadow: 0 8px 24px rgba(42,119,255,0.12); border: none; }
+    .ss-left-actions .btn-outline { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.08); }
+}
+.ss-right-col { flex:1; display:flex; flex-direction:column; gap:12px; align-items:flex-start; padding:10px 24px 10px 18px; padding-right:40px; }
+.ss-welcome { background: transparent; border-radius:12px; padding:16px 10px; box-shadow: none; width:100%; color: #0b1220; }
+.ss-welcome h1 { margin:0 0 8px; font-size:40px; line-height:1.04; font-weight:800; text-shadow: 0 4px 10px rgba(0,0,0,0.6); }
+.ss-welcome p { margin:0; font-size:15px; line-height:1.45; text-shadow: 0 3px 8px rgba(0,0,0,0.6); }
+
+/* Force welcome text to white for contrast against background images */
+.smart-slider-modern .ss-welcome h1,
+.smart-slider-modern .ss-welcome p { color: #ffffff !important; }
+.ss-welcome h1 strong, .ss-welcome .highlight { color: #2b6bff; }
+
+@media (max-width: 1100px) { .ss-left-col { width: 340px; } .ss-slide { width: calc((100% - 16px) / 3); } }
+@media (max-width: 1000px) { .ss-inner { flex-direction:column; gap:12px; padding:0 12px; } .ss-left-col{ width:100%; } .ss-right-col{ padding:12px; } .ss-slide { width: calc((100% - 12px) / 2); } }
+@media (min-width: 1001px) and (max-width: 1400px) { .ss-left-col{ min-width:300px; width:48%; } }
+@media (max-width: 480px) { .ss-slide { width: 180px; } .ss-btn { display:none; } .smart-slider-modern { padding: 12px 0; } .ss-welcome h1{ font-size:20px } .ss-welcome p{ font-size:14px } }
+
+/* Left-aligned inner container variant */
+.smart-slider-modern .ss-inner.ss-left { max-width: 1100px; margin: 0; padding: 0 20px; }
+
+/* Compact hero/slider overrides - ensures a smaller hero and covers */
+.smart-slider-modern {
+	--hero-height: 260px !important;
+	min-height: var(--hero-height) !important;
+}
+.smart-slider-modern .ss-inner {
+	padding: 6px 12px !important;
+}
+.ss-welcome h1 {
+	font-size: 28px !important;
+	line-height: 1.05 !important;
+	margin-bottom: 6px !important;
+}
+.ss-welcome p {
+	font-size: 14px !important;
+	line-height: 1.3 !important;
+	opacity: 0.98 !important;
+}
+.ss-slide {
+	width: 200px !important;
+}
+.ss-card {
+	max-width: 200px !important;
+	padding: 8px !important;
+	border-radius: 10px !important;
+}
+.ss-cover-wrap {
+	padding-top: 120% !important; /* reduce cover height */
+}
+.ss-slide.active { transform: scale(1.02) translateY(-4px) !important; box-shadow: 0 12px 30px rgba(6,10,24,0.22) !important; }
+
+/* Reduce left column width so welcome text doesn't push slider down */
+.ss-left-col { width: 34% !important; min-width: 200px !important; padding-left: 10px !important; }
+
+/* Ensure responsive adjustments maintain compact feel */
+@media (max-width: 1100px) {
+	.smart-slider-modern { --hero-height: 220px !important; }
+	.ss-slide { width: calc((100% - 16px) / 3) !important; }
+}
+@media (max-width: 800px) {
+	.smart-slider-modern { --hero-height: 200px !important; }
+	.ss-slide { width: calc((100% - 8px) / 2) !important; }
+	.ss-welcome h1 { font-size: 20px !important; }
+}

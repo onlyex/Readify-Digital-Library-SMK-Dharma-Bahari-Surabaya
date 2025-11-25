@@ -1,0 +1,103 @@
+
+
+:root {
+	--bg: #f5f9ff;
+	--card: #ffffff;
+	--accent: #2b7cff;
+	--muted: #6b7280;
+	--radius: 10px;
+	--text: #062033;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+}
+
+.container {
+	/* Full-width layout with small horizontal gutter */
+	max-width: none;
+	width: 100%;
+	margin: 0;
+	padding: 0 20px;
+}
+
+.header-top {
+	background: transparent;
+	padding: 12px 0;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.nav-links {
+	display: flex;
+	gap: 14px;
+	align-items: center;
+}
+
+.nav-links a {
+	color: var(--text);
+	text-decoration: none;
+	font-weight: 600;
+	padding: 8px 10px;
+	border-radius: 8px;
+}
+
+.nav-links a:hover {
+	background: rgba(43, 124, 255, 0.08);
+	color: var(--accent);
+}
+
+.card {
+	background: var(--card);
+	padding: 18px;
+	border-radius: 12px;
+	box-shadow: 0 6px 18px rgba(11, 37, 64, 0.04);
+}
+
+.btn {
+	display: inline-block;
+	padding: 8px 12px;
+	border-radius: 8px;
+	text-decoration: none;
+	border: none;
+	background: var(--accent);
+	color: #fff;
+	font-weight: 600;
+}
+
+.form-control {
+	width: 100%;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #e6f3ff;
+	margin: 8px 0;
+}
+
+.footer {
+	margin-top: 24px;
+	padding: 18px 0;
+	text-align: center;
+	color: var(--muted);
+	font-size: 14px;
+}

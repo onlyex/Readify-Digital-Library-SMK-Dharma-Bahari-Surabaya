@@ -1,0 +1,106 @@
+/* Index / hero / slider styles (extracted from theme_dashboard.css) */
+/* Slider (Gambar hero/utama) */
+#smartSlider {
+	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(3, 24, 40, 0.06);
+}
+
+#smartSlider .slides {
+	display: flex;
+	transition: transform .6s ease;
+}
+
+#smartSlider .slides img {
+	width: 100%;
+	flex: 0 0 100%;
+	display: block;
+	height: 460px;
+	object-fit: cover;
+}
+
+#smartSlider .sbtn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.35);
+	color: #fff;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+#smartSlider #prev { left: 12px }
+#smartSlider #next { right: 12px }
+
+#smartSlider .slider-caption { position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; pointer-events: none }
+
+/* keep hero caption readable by constraining it while slider remains full-bleed */
+#smartSlider .slider-caption .caption-inner { pointer-events: auto; max-width: 1100px; width: 100%; margin: 0 auto; color: #fff; text-align: center; padding: 24px }
+
+#smartSlider .slider-caption h1 { font-size: 40px; margin: 0 0 10px; line-height: 1.02; text-shadow: 0 10px 30px rgba(3, 24, 40, 0.6); animation: slideUp .9s ease both }
+
+#smartSlider .slider-caption p { font-size: 18px; margin: 0 0 18px; color: rgba(255, 255, 255, 0.95); text-shadow: 0 6px 18px rgba(3, 24, 40, 0.45); animation: fadeIn .9s ease .15s both }
+
+#smartSlider .slider-caption .hero-cta { display: flex; gap: 12px; justify-content: center }
+
+#smartSlider .slider-caption .btn { padding: 12px 16px; border-radius: 10px }
+
+#smartSlider .slider-caption .btn-outline { background: transparent; border: 1px solid rgba(255, 255, 255, 0.9); color: #fff }
+
+#smartSlider .slider-caption::before { content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(3, 24, 40, 0.6) 10%, rgba(3, 24, 40, 0.08) 40%, rgba(3, 24, 40, 0.02) 100%); z-index: 2 }
+
+#smartSlider .slider-caption .caption-inner { position: relative; z-index: 3 }
+
+@keyframes slideUp { from { transform: translateY(18px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+
+@media (max-width: 900px) {
+	#smartSlider .slider-caption .caption-inner { max-width: 640px; width: 100%; margin: 0 auto; padding: 18px }
+	#smartSlider .slider-caption h1 { font-size: 28px }
+	#smartSlider .slider-caption p { font-size: 15px }
+}
+
+@media (max-width: 520px) {
+	#smartSlider .slider-caption { align-items: flex-end }
+	#smartSlider .slider-caption .caption-inner { max-width: 100%; margin: 12px; padding: 12px }
+	#smartSlider .slider-caption h1 { font-size: 18px }
+	#smartSlider .slider-caption p { display: none }
+	#smartSlider .slider-caption .hero-cta { gap: 8px }
+}
+
+.hero { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 40px 24px; align-items: center }
+.hero-left h1 { font-size: 34px; color: var(--text); margin-bottom: 8px }
+.hero-cta { display: flex; gap: 10px; margin-top: 12px }
+
+.genre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 14px }
+.genre-card { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border-radius: 10px; padding: 14px; text-align: center; color: #fff }
+.genre-card .gimg { height: 110px; border-radius: 8px; object-fit: cover; width: 100%; margin-bottom: 8px; background: rgba(255,255,255,0.04) }
+.genre-card h4 { margin: 6px 0 0; font-size: 15px }
+.genre-card p { margin: 6px 0 0; font-size: 13px; opacity: 0.9 }
+
+@media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr } }
+
+@media (max-width: 520px) { #smartSlider .slides img { height: 260px } }
+
+/* Smart small book slider styles */
+.smart-book-slider{margin:22px 0 8px}
+.smart-tabs{display:flex;gap:8px;margin-bottom:12px}
+.smart-tabs .tab{padding:8px 12px;border-radius:10px;border:1px solid rgba(3,24,40,0.06);background:transparent;cursor:pointer;color:var(--text);font-weight:700}
+.smart-tabs .tab.active{background:linear-gradient(90deg,rgba(74,144,226,0.12),rgba(99,179,237,0.08));border-color:var(--dash-accent);color:var(--dash-accent)}
+.smart-carousels{position:relative}
+.carousel{display:none;align-items:center;gap:8px;position:relative}
+.carousel.active{display:flex}
+.carousel .car-prev, .carousel .car-next{background:rgba(5,48,74,0.06);border:none;color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer;margin:0 8px}
+.carousel .car-prev:hover, .carousel .car-next:hover{background:rgba(5,48,74,0.10)}
+.carousel-track{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;padding:8px 0;flex:1}
+.carousel-track::-webkit-scrollbar{height:8px}
+.carousel-track::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--dash-accent),#7fb3ff);border-radius:8px}
+.slide-card{min-width:160px;max-width:200px;flex:0 0 auto;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:10px;padding:10px;box-shadow:0 10px 30px rgba(3,24,40,0.04);text-align:left}
+.slide-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+.slide-card .sc-title{font-weight:700;font-size:14px;color:var(--text);margin-bottom:4px}
+.slide-card .sc-meta{font-size:13px;color:var(--muted)}
+
+@media(max-width:720px){ .slide-card{min-width:140px} .slide-card img{height:140px} }
