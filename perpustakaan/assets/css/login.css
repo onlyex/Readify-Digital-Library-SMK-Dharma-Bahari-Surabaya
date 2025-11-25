@@ -1,0 +1,292 @@
+
+/* Scope all login/register styles under body classes so header/footer aren't affected */
+body.login-page, body.register-page {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+body.login-page p,
+body.register-page p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+body.login-page .input-group input,
+body.register-page .input-group input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+body.login-page .btn,
+body.register-page .btn {
+  width: 100%;
+  padding: 14px;
+  background: #1f5f99;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #184c78;
+}
+
+/* Scoped rules targeting the actual markup used in pages.
+  /* ------------------------------------------------------------------
+     Login / Register - Scoped styles
+     These rules are scoped under `body.login-page` and `body.register-page`
+     to avoid impacting shared header/footer styles.
+     ------------------------------------------------------------------ */
+
+  /* Base page scope */
+  body.login-page,
+  body.register-page {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial,
+      sans-serif;
+  }
+
+  /* Typography */
+  h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  body.login-page p,
+  body.register-page p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  /* Form controls */
+  body.login-page .input-group input,
+  body.register-page .input-group input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #eee;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  body.login-page .btn,
+  body.register-page .btn {
+    width: 100%;
+    padding: 14px;
+    background: #1f5f99;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .3s ease;
+  }
+
+  /* Keep hover scoped so global buttons are not affected */
+  body.login-page .btn:hover,
+  body.register-page .btn:hover {
+    background: #184c78;
+  }
+
+  /* ------------------------------------------------------------------
+     Layout: make login/register pages full-bleed but only for main container
+     so header/navbar `.container` remains unchanged.
+     ------------------------------------------------------------------ */
+  body.login-page main.container,
+  body.register-page main.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Page-specific wrappers (preferred selectors) */
+  body.login-page .login-container,
+  body.register-page .register-container,
+  body.login-page main.container > .login-container,
+  body.register-page main.container > .register-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+    justify-content: space-between;
+    background: transparent; /* let page background show through */
+  }
+
+  body.login-page .login-left,
+  body.register-page .register-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* no solid panel behind image */
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  body.login-page .login-right,
+  body.register-page .register-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* no white background behind form area */
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  /* Form card */
+  body.login-page .login-form-box,
+  body.register-page .register-form-box,
+  body.login-page .form-box,
+  body.register-page .form-box {
+    width: 100%;
+    max-width: 480px; /* constrain form card for readability */
+    padding: 48px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(12, 34, 56, 0.08);
+    background: #fff;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  /* Small utility & text links */
+  body.login-page .forgot,
+  body.register-page .forgot {
+    display: block;
+    margin-top: 12px;
+    color: #1f5f99;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  body.login-page .bottom-text,
+  body.register-page .bottom-text {
+    margin-top: 18px;
+    text-align: center;
+  }
+
+  body.login-page .bottom-text a,
+  body.register-page .bottom-text a {
+    color: #1f5f99;
+    text-decoration: none;
+  }
+
+  body.login-page .error,
+  body.register-page .error {
+    background: #ffb9b9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    color: #a30000;
+  }
+
+  /* ------------------------------------------------------------------
+     Backwards-compatible class names (kept for pages that may use them)
+     These are intentionally less-specific to avoid breaking other code.
+     ------------------------------------------------------------------ */
+  .login-container,
+  .register-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #eaf6ff 0%, #ffffff 100%);
+  }
+
+  .login-left,
+  .register-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+  }
+
+  .side-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .login-right,
+  .register-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .login-form-box,
+  .register-form-box {
+    width: 100%;
+    max-width: 480px; /* constrain form card for readability */
+    padding: 48px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(12, 34, 56, 0.08);
+    background: #07b7ed;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  /* ------------------------------------------------------------------
+     Animation
+     ------------------------------------------------------------------ */
+  .fadeIn {
+    animation: fadeIn .6s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     Responsive: stack columns on smaller viewports
+     ------------------------------------------------------------------ */
+  @media (max-width: 900px) {
+    .login-container,
+    .register-container,
+    body.login-page .login-container,
+    body.register-page .register-container {
+      flex-direction: column;
+    }
+
+    .login-left,
+    .register-left,
+    .login-right,
+    .register-right {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+
+    .side-img {
+      height: auto;
+      max-height: 260px;
+    }
+
+    body.login-page .form-box,
+    body.register-page .form-box {
+      padding: 28px;
+    }
+  }

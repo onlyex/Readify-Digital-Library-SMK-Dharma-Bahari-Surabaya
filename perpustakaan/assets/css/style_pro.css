@@ -1,0 +1,32 @@
+
+/* PRO Cloud Blue theme */
+
+body {
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	background: linear-gradient(180deg, #eaf6ff 0%, #ffffff 100%);
+	color: #0b2540;
+}
+
+.navbar-brand {
+	font-weight: 700;
+}
+
+.hero-section {
+	padding: 80px 0;
+	border-radius: 12px;
+	margin-bottom: 30px;
+}
+
+.book-card {
+	background: #fff;
+	border-radius: 12px;
+	padding: 12px;
+	box-shadow: 0 6px 18px rgba(12, 34, 56, 0.06);
+	margin-bottom: 12px;
+}
+
+.btn-primary {
+	background: #58a7ff;
+	border: none;
+}

@@ -1,0 +1,216 @@
+
+/* Cloud Blue - Clean Theme */
+
+:root {
+  --cloud: #BEE3F8;
+  --sky: #63B3ED;
+  --white: #ffffff;
+  --text: #073044;
+  --muted: #6b7a86;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--cloud), var(--white));
+}
+
+/* Utility: constrain content for readability while layout remains full-width */
+.constrain {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container {
+  /* Full-width layout: allow containers to span the viewport */
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.header-top {
+  background: var(--white);
+  box-shadow: 0 4px 16px rgba(3, 24, 40, 0.06);
+  border-bottom: 1px solid rgba(3, 24, 40, 0.03);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--sky);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  background: rgba(99, 179, 237, 0.12);
+  color: var(--sky);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--sky);
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(99, 179, 237, 0.18);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(3, 24, 40, 0.06);
+  color: var(--text);
+}
+
+/* Hero image / illustration */
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-illustration {
+  width: 100%;
+  max-width: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(3, 24, 40, 0.08);
+  overflow: hidden;
+}
+
+/* Sections */
+.section {
+  padding: 28px 0;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.section p {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+/* Catalog grid */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.book-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(3, 24, 40, 0.06);
+  transition: transform .25s;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.book-meta {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Footer */
+.footer {
+  padding: 28px 0;
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
